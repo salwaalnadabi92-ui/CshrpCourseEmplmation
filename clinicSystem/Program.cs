@@ -148,15 +148,15 @@ namespace clinicSystem
                         if (IsActive && name ==PatientName  )
                         {
 
-                            string PatientName1 = "";
+                            PatientName = "";
 
-                            int PatientID1 = 0;
+                            PatientID = 0;
 
-                            int PatientAge1 = 0;
+                            PatientAge = 0;
 
-                            string PatientPhone1 = "";
+                             PatientPhone = "";
 
-                            bool IsActive1 = false;
+                             IsActive = false;
 
                             Console.WriteLine("patien deleted  successfully");
 
