@@ -1,4 +1,6 @@
-﻿namespace clinicSystem
+﻿using Microsoft.VisualBasic;
+
+namespace clinicSystem
 {
     internal class Program
     {
@@ -38,9 +40,11 @@
                 switch (opation)
                 {
 
-              
 
-                case 1:
+
+                    ////ADD patient
+
+                    case 1:
                         Console.WriteLine("1)Register patient");
                     if (IsActive == true)
                     {
@@ -64,12 +68,12 @@
                         IsActive = true;
 
                         Console.WriteLine("information added successfully");
-
                     }
 
                     break;
 
 
+                        //////Veiw patient
 
                     case 2:
 
@@ -79,14 +83,10 @@
                     {
                         Console.WriteLine("no account information found please add patient information first");
                     }
-                        
-
-
-
+      
                     else
 
                     {
-
                         Console.WriteLine("patient name : "+  PatientName);
                         Console.WriteLine("patient ID: "+   PatientID);
                         Console.WriteLine("patient Age : "+  PatientAge);
@@ -96,6 +96,7 @@
                     break;
 
 
+                       ////// Update patient Information
 
                     case 3:
                         Console.WriteLine("3)Update patient Information");
@@ -104,13 +105,13 @@
                         Console.WriteLine(" choice your edit:   ");
                         Console.WriteLine("1. Edit  Name");
                         Console.WriteLine("2. Edit phone ");
-                        int choice = int.Parse(Console.ReadLine());
+                        int choice =int.Parse(Console.ReadLine());
 
                         if (choice ==1)
                         {
 
                             Console.WriteLine(" Enter new name  ");
-                            PatientName = Console.ReadLine();
+                            PatientName =Console.ReadLine();
                             Console.WriteLine(" update  successfully ");
                         }
 
@@ -126,7 +127,6 @@
                         else
                         {
 
-
                             Console.WriteLine(" invlaid opatin try again ");
                 }
 
@@ -134,31 +134,35 @@
                 break;
 
 
-                       case 4:
+
+                    //////delete patient Information
+
+
+                    case 4:
 
                         Console.WriteLine("4)delete patient");
 
                         Console.WriteLine("enter your name :  ");
                         string name = Console.ReadLine();
 
-                        if (IsActive && PatientName == name)
+                        if (IsActive && name ==PatientName  )
                         {
 
-                            string PatientName = "";
+                            string PatientName1 = "";
 
-                            int PatientID = 0;
+                            int PatientID1 = 0;
 
-                            int PatientAge = 0;
+                            int PatientAge1 = 0;
 
-                            string PatientPhone = "";
+                            string PatientPhone1 = "";
 
-                            bool IsActive = false;
+                            bool IsActive1 = false;
+
+                            Console.WriteLine("patien deleted  successfully");
+
                         }
-
-
                         else
 
-                            
                         {
                             Console.WriteLine("patient not found ");
                         }
@@ -167,7 +171,8 @@
 
                        
 
-
+                      ///   EXIT
+                      
                     case 5:
 
                         Console.WriteLine("5)EXIT");
@@ -184,6 +189,14 @@
 
 
                 } // switch
+
+                Console.WriteLine("press any key to continue...");
+                Console.ReadKey();
+                Console.Clear(); 
+
+
+
+
             } //while
 
 
