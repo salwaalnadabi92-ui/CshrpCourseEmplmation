@@ -25,7 +25,7 @@
             Console.WriteLine("2) Veiw patient");
             Console.WriteLine("3)Update patient Information");
             Console.WriteLine("4)delete patient");
-            Console.WriteLine("5)Medical Registor");
+            Console.WriteLine("5)Medical hoistory");
             Console.WriteLine("6)EXIT");
 
 
@@ -40,23 +40,54 @@
 
                 case 1:
                         Console.WriteLine("1)Register patient");
+                    if (IsActive == true)
+                    {
+                        Console.WriteLine("patient information already exists please edit account information if you want to change it");
+                    }
 
 
 
 
 
-                        break;
+
+
+
+
+
+
+                    break;
 
 
                     case 2:
+
                         Console.WriteLine("2) Veiw patient");
 
-                        break;
+                    if (IsActive == false)
+                    {
+                        Console.WriteLine("no account information found please add patient information first");
+                    }
+   
+                    else
+
+                    {
+
+                        Console.WriteLine("patient name : "+  PatientName);
+                        Console.WriteLine("patient ID: "+   PatientID);
+                    Console.WriteLine("patient Age : "+  PatientAge);
+                        Console.WriteLine("patient name :" +   PatientPhone);
+                    }
+
+
+
+                    break;
 
 
 
                     case 3:
                         Console.WriteLine("3)Update patient Information");
+
+
+
 
                         break;
 
@@ -68,7 +99,7 @@
                         break;
 
                        case 5 :
-                        Console.WriteLine("5)Medical Registor");
+                        Console.WriteLine("5)Medical hoistory");
 
 
                         break;
@@ -80,6 +111,14 @@
 
 
                         break;
+
+
+
+                default:
+
+                    Console.WriteLine("invaild");
+
+                    break;
 
 
                 } // switch
