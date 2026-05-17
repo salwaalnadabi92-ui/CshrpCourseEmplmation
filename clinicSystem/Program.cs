@@ -17,7 +17,7 @@
             bool IsActive = false;
 
 
-        
+        while (true) {
            
 
                 Console.WriteLine("Main Menu");
@@ -77,14 +77,17 @@
                     {
                         Console.WriteLine("no account information found please add patient information first");
                     }
-   
+                        
+
+
+
                     else
 
                     {
 
                         Console.WriteLine("patient name : "+  PatientName);
                         Console.WriteLine("patient ID: "+   PatientID);
-                    Console.WriteLine("patient Age : "+  PatientAge);
+                        Console.WriteLine("patient Age : "+  PatientAge);
                         Console.WriteLine("patient name :" +   PatientPhone);
                     }
 
@@ -96,13 +99,47 @@
                         Console.WriteLine("3)Update patient Information");
 
 
+                        Console.WriteLine(" choice your edit:   ");
+                        Console.WriteLine("1. Edit  Name");
+                        Console.WriteLine("2. Edit phone ");
+                        int choice = int.Parse(Console.ReadLine());
+
+                        if (choice ==1)
+                        {
+
+                            Console.WriteLine(" Enter new name  ");
+                            PatientName = Console.ReadLine();
+                            Console.WriteLine(" update  successfully ");
+                        }
+
+                        else if (choice == 2)
+
+                        {
+
+                            Console.WriteLine(" Enter new phone ");
+                            PatientPhone = Console.ReadLine();
+                            Console.WriteLine(" update  successfully ");
+                        }
+
+                        else
+                        {
 
 
-                        break;
+                            Console.WriteLine(" invlaid opatin try again ");
+                }
+
+
+                break;
 
 
                        case 4:
                         Console.WriteLine("4)delete patient");
+
+
+
+
+
+
 
 
                         break;
@@ -119,6 +156,9 @@
                         Console.WriteLine("6)EXIT");
 
 
+
+
+
                         break;
 
 
@@ -131,11 +171,11 @@
 
 
                 } // switch
-
-
-
-
-
             }
+
+
+
+
+        }
         }
 }
