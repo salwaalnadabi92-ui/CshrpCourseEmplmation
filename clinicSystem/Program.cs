@@ -42,20 +42,31 @@
                         Console.WriteLine("1)Register patient");
                     if (IsActive == true)
                     {
-                        Console.WriteLine("patient information already exists please edit account information if you want to change it");
+                        Console.WriteLine("patient information already exists please edit  information if you want to change it");
                     }
 
+                    else
+                    {
+                        Console.WriteLine("enter your name");
+                        PatientName = Console.ReadLine();
 
+                        Console.WriteLine("enter your ID");
+                        PatientID =int.Parse(Console.ReadLine());
 
+                        Console.WriteLine("enter your age ");
+                        PatientAge =int.Parse(Console.ReadLine());
 
+                        Console.WriteLine("enter your phone ");
+                        PatientPhone =Console.ReadLine();
 
+                        IsActive = true;
 
+                        Console.WriteLine("information added successfully");
 
-
-
-
+                    }
 
                     break;
+
 
 
                     case 2:
@@ -76,8 +87,6 @@
                     Console.WriteLine("patient Age : "+  PatientAge);
                         Console.WriteLine("patient name :" +   PatientPhone);
                     }
-
-
 
                     break;
 
