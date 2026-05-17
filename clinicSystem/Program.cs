@@ -17,16 +17,18 @@
             bool IsActive = false;
 
 
-        while (true) {
+
+            bool exit  = false;
+
+        while (exit == false) {
            
 
-                Console.WriteLine("Main Menu");
+            Console.WriteLine("Main Menu");
             Console.WriteLine("1)Register patient");
             Console.WriteLine("2) Veiw patient");
             Console.WriteLine("3)Update patient Information");
             Console.WriteLine("4)delete patient");
-            Console.WriteLine("5)Medical hoistory");
-            Console.WriteLine("6)EXIT");
+            Console.WriteLine("5)EXIT");
 
 
                 Console.WriteLine("Enter your Opation");
@@ -133,35 +135,46 @@
 
 
                        case 4:
+
                         Console.WriteLine("4)delete patient");
 
+                        Console.WriteLine("enter your name :  ");
+                        string name = Console.ReadLine();
+
+                        if (IsActive && PatientName == name)
+                        {
+
+                            string PatientName = "";
+
+                            int PatientID = 0;
+
+                            int PatientAge = 0;
+
+                            string PatientPhone = "";
+
+                            bool IsActive = false;
+                        }
 
 
+                        else
 
-
-
-
+                            
+                        {
+                            Console.WriteLine("patient not found ");
+                        }
 
                         break;
 
-                       case 5 :
-                        Console.WriteLine("5)Medical hoistory");
+                       
 
 
-                        break;
+                    case 5:
 
+                        Console.WriteLine("5)EXIT");
 
-                    case 6:
-
-                        Console.WriteLine("6)EXIT");
-
-
-
-
+                        exit = true;
 
                         break;
-
-
 
                 default:
 
@@ -171,7 +184,7 @@
 
 
                 } // switch
-            }
+            } //while
 
 
 
