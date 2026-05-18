@@ -69,7 +69,7 @@ namespace HotelManagementSystem
                     {
 
                         Console.WriteLine(" enter your full name");
-                        guestName =Console.ReadLine();
+                            guestName = Console.ReadLine().Trim();
 
                             Console.WriteLine(" enter your phone number");
                         guestPhone = Console.ReadLine();
@@ -90,9 +90,7 @@ namespace HotelManagementSystem
 
 
                             Console.WriteLine("Aguest registored successfully ");
-                            
-
-
+                           
 
                         }
 
