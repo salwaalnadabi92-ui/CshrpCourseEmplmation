@@ -26,6 +26,35 @@ namespace HotelManagementSystem
            bool    currentlyCheckedIn = false;
 
 
+            //Main menu
+
+            Console.WriteLine(" user's choice");
+            Console.WriteLine("0) Register New Gues ");
+            Console.WriteLine("1) View Guest Information");
+            Console.WriteLine("2) Check-In Guest");
+            Console.WriteLine("3) Check-Out & Bill " );
+            Console.WriteLine("4) Apply Discount ");
+            Console.WriteLine("5) Upgrade Room");
+            Console.WriteLine("6) Add Room Service Note ");
+            Console.WriteLine("7) Search Guest by Name");
+            Console.WriteLine("8) Calculate Loyalty Points  ");
+            Console.WriteLine("9) Print Receipt  ");
+            Console.WriteLine("10) Edit Guest Name  ");
+            Console.WriteLine("11) Exit ");
+
+            int choice = int.Parse(Console.ReadLine());
+
+            switch (choice)
+            
+            {
+
+             
+
+
+
+
+
+
 
 
 
