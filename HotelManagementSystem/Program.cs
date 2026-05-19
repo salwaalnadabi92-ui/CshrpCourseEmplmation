@@ -90,7 +90,7 @@ namespace HotelManagementSystem
 
 
                             Console.WriteLine("Aguest registored successfully ");
-                           
+                           guestName = Console.ReadLine().Trim();
 
                         }
 
@@ -101,11 +101,42 @@ namespace HotelManagementSystem
 
                 case 1:
 
-                    break;
+                        if (guestIsRegistered == false)
+
+                          {
+                            Console.WriteLine(" Aguest not found try to registored ");
+                        }
+
+                        else 
+
+                        {
+
+
+                            Console.WriteLine(" Aguest not found try to registored ");
+                        }
+
+                        Console.WriteLine(" ___ Aguest  Information---" );
+                        Console.WriteLine(" Guest Name " + guestName.ToUpper());
+                        string    roomString = Convert.ToString(roomNumber);//Convert.ToString
+                        Console.WriteLine("room number " + roomString);
+                        Console.WriteLine("phone " + guestPhone);
+                        Console.WriteLine("room type " + roomType);
+                        Console.WriteLine("nigtlyrate" + Math.Round(nightlyRate,1));//Math.Round
+
+
+                        break;
 
                 case 2:
 
-                    break;
+                        Console.WriteLine(" ___ check-in date----");
+                        checkinDate = DateTime.Now;
+                        Console.WriteLine("enter number Of Nights ");
+                        number_Of_Nights = Convert.ToInt32(Console.ReadLine());
+
+
+
+
+                        break;
 
 
                 case 3:
