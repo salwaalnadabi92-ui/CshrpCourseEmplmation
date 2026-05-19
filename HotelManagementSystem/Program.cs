@@ -167,10 +167,12 @@ namespace HotelManagementSystem
 
                             Console.WriteLine("enter discount");
                             discountPercentage = Convert.ToDouble(Console.ReadLine());
-                            totalbill = totalbill - (totalbill * discountPercentage);
-                             totalbill = Math.Round(totalbill, 2); 
+                            totalbill = totalbill - (totalbill * discountPercentage / 100);
+                             totalbill = Math.Round(totalbill, 2);
 
+                            Console.WriteLine("final bill" + totalbill);
 
+                            roomNumber = 0;
                         }
 
 
