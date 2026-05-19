@@ -107,13 +107,10 @@ namespace HotelManagementSystem
                             Console.WriteLine(" Aguest not found try to registored ");
                         }
 
-                        else 
+                        else
 
                         {
 
-
-                            Console.WriteLine(" Aguest not found try to registored ");
-                        }
 
                         Console.WriteLine(" ___ Aguest  Information---" );
                         Console.WriteLine(" Guest Name " + guestName.ToUpper());
@@ -122,26 +119,66 @@ namespace HotelManagementSystem
                         Console.WriteLine("phone " + guestPhone);
                         Console.WriteLine("room type " + roomType);
                         Console.WriteLine("nigtlyrate" + Math.Round(nightlyRate,1));//Math.Round
+                        }
 
-
+                      
                         break;
 
                 case 2:
 
                         Console.WriteLine(" ___ check-in date----");
                         checkinDate = DateTime.Now;
-                        Console.WriteLine("enter number Of Nights ");
+
+
+                        if (currentlyCheckedIn==false)
+
+                        {
+                            Console.WriteLine("  not registored found  ");
+
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("enter number Of Nights ");
                         number_Of_Nights = Convert.ToInt32(Console.ReadLine());
+                            checkout_date = DateTime.Today;
 
 
-
-
+                        }
                         break;
 
 
                 case 3:
 
-                    break;
+                        Console.WriteLine("----Check - Out & Bill---- ");
+
+                        if (currentlyCheckedIn ==false)
+
+                        {
+                            Console.WriteLine("Guest not found  ");
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("enter number of night ");
+                            int totalnight = Convert.ToInt32(Console.ReadLine());
+
+                            double totalbill = totalnight * nightlyRate;
+
+                            Console.WriteLine("enter discount");
+                            discountPercentage = Convert.ToDouble(Console.ReadLine());
+                            totalbill = totalbill - (totalbill * discountPercentage);
+                             totalbill = Math.Round(totalbill, 2); 
+
+
+                        }
+
+
+
+
+
+
+                        break;
 
 
                 case 4:
