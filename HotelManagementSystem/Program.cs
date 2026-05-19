@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System.Timers;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -74,7 +75,13 @@ namespace HotelManagementSystem
                             Console.WriteLine(" enter your phone number");
                         guestPhone = Console.ReadLine();
 
-                        Console.WriteLine(" enter  nightly rate");
+                            Console.WriteLine("enter room type : single room/ Twin room");
+                            roomType = Console.ReadLine();
+
+
+
+
+                            Console.WriteLine(" enter  nightly rate");
                             nightlyRate =double.Parse (Console.ReadLine());
 
                             Console.WriteLine(" choose room number");
@@ -84,6 +91,7 @@ namespace HotelManagementSystem
                             roomNumber = random.Next(1, 10);
 
                             Console.WriteLine("random number " + roomNumber);
+
 
 
                             guestIsRegistered = true;
@@ -127,21 +135,32 @@ namespace HotelManagementSystem
                 case 2:
 
                         Console.WriteLine(" ___ check-in date----");
-                        checkinDate = DateTime.Now;
+            
 
 
-                        if (currentlyCheckedIn==false)
+                        if (roomNumber==0)
 
                         {
-                            Console.WriteLine("  not registored found  ");
+                            Console.WriteLine("  not guest found");
 
                         }
 
                         else
                         {
+                            checkinDate = DateTime.Now;//registor enter time
+
                             Console.WriteLine("enter number Of Nights ");
-                        number_Of_Nights = Convert.ToInt32(Console.ReadLine());
-                            checkout_date = DateTime.Today;
+               number_Of_Nights = Convert.ToInt32(Console.ReadLine());
+
+
+
+                            DateTime todayDate = DateTime.Today;// Compute time exit
+                            checkout_date = todayDate.AddDays(number_Of_Nights);
+
+                            Console.WriteLine(" check in successfull");
+
+                            Console.WriteLine(" date" + checkinDate.ToString());
+                            Console.WriteLine(" check out date " + checkout_date.ToString());
 
 
                         }
@@ -150,7 +169,7 @@ namespace HotelManagementSystem
 
                 case 3:
 
-                        Console.WriteLine("----Check - Out & Bill---- ");
+                        Console.WriteLine("----Check  Out & Bill---- ");
 
                         if (currentlyCheckedIn ==false)
 
@@ -160,12 +179,13 @@ namespace HotelManagementSystem
 
                         else
                         {
-                            Console.WriteLine("enter number of night ");
-                            int totalnight = Convert.ToInt32(Console.ReadLine());
+                            //onsole.WriteLine("enter number of night ");
+                            //nt totalnight = Convert.ToInt32(Console.ReadLine());
 
-                            double totalbill = totalnight * nightlyRate;
+                            double totalbill = number_Of_Nights * nightlyRate;
 
                             Console.WriteLine("enter discount");
+
                             discountPercentage = Convert.ToDouble(Console.ReadLine());
                             totalbill = totalbill - (totalbill * discountPercentage / 100);
                              totalbill = Math.Round(totalbill, 2);
@@ -176,6 +196,18 @@ namespace HotelManagementSystem
                         }
 
 
+                        break;
+
+
+                case 4:
+
+                        Console.WriteLine("---- Apply Discoun--- ");
+
+
+
+                        Console.WriteLine("enter your total bill");
+
+
 
 
 
@@ -183,13 +215,15 @@ namespace HotelManagementSystem
                         break;
 
 
-                case 4:
-
-                    break;
 
                 case 5:
+                        Console.WriteLine("----Upgrade Room --- ");
 
-                    break;
+
+
+
+
+                        break;
 
 
                 case 6:
