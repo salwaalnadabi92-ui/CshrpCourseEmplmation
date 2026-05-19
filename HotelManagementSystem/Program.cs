@@ -171,7 +171,7 @@ namespace HotelManagementSystem
 
                         Console.WriteLine("----Check  Out & Bill---- ");
 
-                        if (currentlyCheckedIn ==false)
+                        if (roomNumber == 0)
 
                         {
                             Console.WriteLine("Guest not found  ");
@@ -179,8 +179,8 @@ namespace HotelManagementSystem
 
                         else
                         {
-                            //onsole.WriteLine("enter number of night ");
-                            //nt totalnight = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("enter number of night ");
+                            number_Of_Nights= Convert.ToInt32(Console.ReadLine());
 
                             double totalbill = number_Of_Nights * nightlyRate;
 
