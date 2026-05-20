@@ -1,5 +1,8 @@
-﻿using System.Timers;
+﻿using Microsoft.Win32;
+using System.ComponentModel.Design;
+using System.Timers;
 using static System.Collections.Specialized.BitVector32;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LibraryManagementSystem
 {
@@ -56,10 +59,122 @@ namespace LibraryManagementSystem
                 Console.WriteLine("13.Session Summary ");
                 Console.WriteLine("14.Exit");
                 
-                } 
+                }
+
+        //funcation call code for  check if is register or not 
+        public static bool checkIsRegisterer()
+
+        {
+            if (MemberIsregistered == true)
+            {
+                Console.WriteLine("account information already exists ");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
+        //funcation call code for  add Member
+
+        public static void AddMember()
+        {
+            Console.WriteLine(" Enter your Name ");
+            MemberName = Console.ReadLine();
+
+             string Member =MemberName.Substring(0, 5);
+         
+            Console.WriteLine(" Enter Member ID ");
+                    memberID = int.Parse(Console.ReadLine());
+                    Console.WriteLine(" Enter Member Email ");
+                    memberEmail = Console.ReadLine();
+                    Console.WriteLine(" Enter Member tier");
+                    memberTier = Console.ReadLine();
+                    Console.WriteLine(" Enter membershipExpiry ");
+                    membershipExpiryDate = Console.ReadLine();
+                    string Now = DateTime.Now.ToString();
+                    Console.WriteLine(Now);
+
+
+                    MemberIsregistered = true;
+
+                    Console.WriteLine(" added successfully");
+                }
 
 
 
+        // funcation to check member 
+        public static bool checkmember()
+
+        {
+            if (MemberIsregistered == false)
+            {
+                Console.WriteLine("No member found try to registere");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+        //funcation to display all member
+        public static void Displaymember()
+        {
+
+            Console.WriteLine(" Name " + MemberName);
+
+            Console.WriteLine("Member ID" + memberID);
+
+            Console.WriteLine("Member Email " + memberEmail);
+
+            Console.WriteLine("Member tier" + memberTier);
+
+            Console.WriteLine(" membershipExpiry " + membershipExpiryDate);
+
+        }
+
+
+        // funaction to Borrow a Book 
+
+        //public static void BorrowBook (ref int NumAvailableCopies )
+        //{
+
+        //    if (NumAvailableCopies>0)
+
+        //     {
+        //        NumAvailableCopies = NumAvailableCopies - 1;
+
+        //        Console.WriteLine(" );
+
+
+        //    }
+
+
+        //case 8 //Register Book
+
+        public static void libraryregister
+
+            (string Title,
+            string Author,
+            int AvailableCopies,
+            string Genre = "unknown")
+
+        {
+            Title =bookTitle;
+            Author = bookAuthor;
+            AvailableCopies = NumAvailableCopies;
+            Genre = bookGenre;
+
+            Console.WriteLine(" BOOK ADD TO LIBRARY SUCCESSFULY");
+
+
+
+
+        }
 
 
 
@@ -84,60 +199,67 @@ namespace LibraryManagementSystem
 
                     case 0:
 
-                        if (MemberIsregistered == true) 
+                        bool checkResult = checkIsRegisterer();// this  funcation to call if it register
+
+
+                        if (checkResult == false) 
                         {
-                            Console.WriteLine("  There is no Member  registred");
-
+                           AddMember();//funcation to add
                         }
-                        else 
-
-
-                        {
-
-
-                            Console.WriteLine(" Enter full Name ");
-                             MemberName  = Console.ReadLine();
-                            string Member = MemberName.Substring(0,5);
-                            Console.WriteLine(Member);
-                            Console.WriteLine(" Enter Member ID ");
-                             memberID   = int.Parse(Console.ReadLine());
-                            Console.WriteLine(" Enter Member Email ");
-                            memberEmail = Console.ReadLine();
-                            Console.WriteLine(" Enter Member tier");
-                             memberTier   = Console.ReadLine();
-                            Console.WriteLine(" Enter membershipExpiry ");
-                             membershipExpiryDate = Console.ReadLine();
-                            string Now = DateTime.Now.ToString();
-                            Console.WriteLine(Now);
-                        }
-
-
-
-
-                       //// bool checkResult = CheckisActive();
-
-                       // if (checkResult == false) //there is no account stored
-                       // {
-                       //     AddAccountInformation();
-                       // }//
-
-
-
-
-
-
-
+                        
                         break;
+
+
 
 
                     case 1:
+
+                       bool   result  = checkmember(); //this  funcation to call  if not register
+
+                        if (MemberIsregistered==true)
+                        {
+                            Displaymember();//funcation to display member
+
+                        }
+
+
                         break;
 
+
+
+
+
                     case 2:
+
+                       //if (bookIsRegistered == false)
+
+                       // {
+
+                       //     Console.WriteLine("book not register in the library");
+
+                       // }
+
+
+                       //else
+                       // {
+
+
+                       // }
+
+
+
 
                         break;
 
                     case 3:
+
+
+
+
+
+
+
+
                         break;
 
                     case 4:
@@ -146,12 +268,42 @@ namespace LibraryManagementSystem
                     case 5:
                         break;
 
+
+
+
                     case 6:
+
+
+
+
+
+
+
                         break;
 
                             case 7:
                         break;
+
+
+
+
+
+
                             case 8:
+                        Console.WriteLine(" enter book title");
+                        bookTitle = Console.ReadLine();
+                        Console.WriteLine(" enter auther name");
+                        bookAuthor = Console.ReadLine();
+                        Console.WriteLine(" enter number of copies");
+                        NumAvailableCopies =int.Parse (Console.ReadLine());
+                        Console.WriteLine(" enter genre");
+                        bookGenre = Console.ReadLine();
+
+                        libraryregister(bookTitle, bookAuthor, NumAvailableCopies, bookGenre);
+
+
+
+
                         break;
 
                     case 9:
