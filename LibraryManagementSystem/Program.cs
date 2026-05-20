@@ -82,9 +82,51 @@ namespace LibraryManagementSystem
                 {
 
 
-
-
                     case 0:
+
+                        if (MemberIsregistered == true) 
+                        {
+                            Console.WriteLine("  There is no Member  registred");
+
+                        }
+                        else 
+
+
+                        {
+
+
+                            Console.WriteLine(" Enter full Name ");
+                             MemberName  = Console.ReadLine();
+                            string Member = MemberName.Substring(0,5);
+                            Console.WriteLine(Member);
+                            Console.WriteLine(" Enter Member ID ");
+                             memberID   = int.Parse(Console.ReadLine());
+                            Console.WriteLine(" Enter Member Email ");
+                            memberEmail = Console.ReadLine();
+                            Console.WriteLine(" Enter Member tier");
+                             memberTier   = Console.ReadLine();
+                            Console.WriteLine(" Enter membershipExpiry ");
+                             membershipExpiryDate = Console.ReadLine();
+                            string Now = DateTime.Now.ToString();
+                            Console.WriteLine(Now);
+                        }
+
+
+
+
+                       //// bool checkResult = CheckisActive();
+
+                       // if (checkResult == false) //there is no account stored
+                       // {
+                       //     AddAccountInformation();
+                       // }//
+
+
+
+
+
+
+
                         break;
 
 
@@ -131,6 +173,8 @@ namespace LibraryManagementSystem
                     case 14:
                         break;
 
+                    default:
+                        break;
 
 
 
