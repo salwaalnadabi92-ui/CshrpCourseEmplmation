@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System.ComponentModel.Design;
+using System.Reflection.Metadata.Ecma335;
 using System.Timers;
 using static System.Collections.Specialized.BitVector32;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -54,7 +55,7 @@ namespace LibraryManagementSystem
                 Console.WriteLine("8.Register Book ");
                 Console.WriteLine("9.Generate Member ID");
                 Console.WriteLine("10.Display Book Details ");
-                Console.WriteLine("11.Display Book Details ");
+                Console.WriteLine("11.Calculate Renewal ");
                 Console.WriteLine("12.Update Member Email ");
                 Console.WriteLine("13.Session Summary ");
                 Console.WriteLine("14.Exit");
@@ -138,7 +139,64 @@ namespace LibraryManagementSystem
         }
 
 
-        // funaction to Borrow a Book 
+        // case 2:Search Book by Title
+
+        //public static bool searchofbook(string keyword)
+        //{
+
+        //    if (bookIsRegistered == false)
+        //    {
+        //        Console.WriteLine("No book found");
+
+        //    return false;
+        //    }
+
+        //    else
+
+        //    {
+        //        return true;
+        //}
+
+        // }
+
+
+        // case:6
+
+        public static double ApplyDiscount(double  amount)
+        {
+
+            double discount = amount * 0.10;
+
+                    return discount;
+
+        }
+
+        public static double ApplyDiscount(double amount, string tier)
+
+        {
+            double discount = 0;
+
+
+            if (tier == "silver")
+            {
+                discount = 0.10;
+            }
+
+             else  if (tier == "gold")
+
+                {
+                discount = 0.20;
+
+                {
+            else
+
+            discount = 0.5;
+                }
+
+                return amount * discount;
+        }
+
+        //case3 // funaction to Borrow a Book 
 
         //public static void BorrowBook (ref int NumAvailableCopies )
         //{
@@ -156,25 +214,40 @@ namespace LibraryManagementSystem
 
         //case 8 //Register Book
 
-        public static void libraryregister
+        public static void libraryregister //funcation ADD BOOK 
 
             (string Title,
             string Author,
             int AvailableCopies,
-            string Genre = "unknown")
+            string Genre = "")
 
         {
-            Title =bookTitle;
-            Author = bookAuthor;
-            AvailableCopies = NumAvailableCopies;
-            Genre = bookGenre;
+            bookTitle = Title;
+            bookAuthor = Author;
+            NumAvailableCopies = AvailableCopies;
+            bookGenre = Genre;
 
             Console.WriteLine(" BOOK ADD TO LIBRARY SUCCESSFULY");
 
-
-
-
         }
+
+        //case 5 //Calculate Late Fine 
+
+        //public static double CalculateLateFine(int DAYOVER) //FUNCATION TO CALCULATE LATE FINE 
+
+        //{
+
+        //    double Fine= Math.Sqrt(DAYOVER);
+        // return Fine;
+
+        //}
+
+
+
+
+
+
+
 
 
 
@@ -183,7 +256,7 @@ namespace LibraryManagementSystem
 
         static void Main(string[] args)
         {
-                bool exit = false;
+                bool exit = false;                                                                                                                                                                           
                 while (exit == false)
                 {
 
@@ -231,20 +304,7 @@ namespace LibraryManagementSystem
 
                     case 2:
 
-                       //if (bookIsRegistered == false)
-
-                       // {
-
-                       //     Console.WriteLine("book not register in the library");
-
-                       // }
-
-
-                       //else
-                       // {
-
-
-                       // }
+                                                                                                                                                                            
 
 
 
@@ -266,6 +326,15 @@ namespace LibraryManagementSystem
                         break;
 
                     case 5:
+
+                        //Console.WriteLine(" Enter overdue days");
+                        //int days =int.Parse(Console.ReadLine());
+                        // = CalculateLateFine( );
+
+
+
+
+
                         break;
 
 
@@ -273,6 +342,8 @@ namespace LibraryManagementSystem
 
                     case 6:
 
+                        double Result = ApplyDiscount();
+                        double Result1 = ApplyDiscount();
 
 
 
@@ -291,13 +362,13 @@ namespace LibraryManagementSystem
 
                             case 8:
                         Console.WriteLine(" enter book title");
-                        bookTitle = Console.ReadLine();
+                        string bookTitle = Console.ReadLine();
                         Console.WriteLine(" enter auther name");
-                        bookAuthor = Console.ReadLine();
+                        string bookAuthor = Console.ReadLine();
                         Console.WriteLine(" enter number of copies");
-                        NumAvailableCopies =int.Parse (Console.ReadLine());
+                        int NumAvailableCopies =int.Parse (Console.ReadLine());
                         Console.WriteLine(" enter genre");
-                        bookGenre = Console.ReadLine();
+                         string bookGenre = Console.ReadLine();
 
                         libraryregister(bookTitle, bookAuthor, NumAvailableCopies, bookGenre);
 
