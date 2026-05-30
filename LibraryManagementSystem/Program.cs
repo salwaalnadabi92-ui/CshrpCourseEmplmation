@@ -239,13 +239,22 @@ namespace LibraryManagementSystem
         }
 
 
+        //case 7 //checke ligibility
+
+       public  static bool checkEligibility(string expirtDate)
+        {
+            DateTime expiry = DateTime.Parse(expirtDate);
+
+            if (expiry >= DateTime.Today)
+            {
+                return true;
+                  }
+            {
+                return false;
+            }
 
 
-
-
-
-
-
+        }
 
 
 
@@ -365,7 +374,21 @@ namespace LibraryManagementSystem
                         break;
 
                             case 7:
-                                break;
+                    
+                        DateTime Date = DateTime.Parse(Console.ReadLine());
+                        bool eligible = checkEligibility(Date);
+                              if (eligible)
+                        {
+                            Console.WriteLine(" member can borrow");
+                        }
+                        else
+                            {
+                                Console.WriteLine(" member expired");
+
+                            }
+
+
+                            break;
 
 
 
