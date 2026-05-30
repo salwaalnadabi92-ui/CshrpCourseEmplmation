@@ -228,14 +228,14 @@ namespace LibraryManagementSystem
 
         //case 5 //Calculate Late Fine 
 
-        //public static double CalculateLateFine(int DAYOVER) //FUNCATION TO CALCULATE LATE FINE 
+        public static double CalculateLateFine(int DAYOVER) //FUNCATION TO CALCULATE LATE FINE 
 
-        //{
+        {
 
-        //    double Fine= Math.Sqrt(DAYOVER);
-        // return Fine;
+            double Fine = Math.Sqrt(DAYOVER) *2;
+            return Fine;
 
-        //}
+        }
 
 
 
@@ -332,15 +332,17 @@ namespace LibraryManagementSystem
 
                             case 5:
 
-                                //Console.WriteLine(" Enter overdue days");
-                                //int days =int.Parse(Console.ReadLine());
-                                // = CalculateLateFine( );
+                        Console.WriteLine(" Enter overdue days");
+                        int days = int.Parse(Console.ReadLine());
+       
+                              double  finalFine  = CalculateLateFine(days);
+
+
+                        Console.WriteLine("late final " + finalFine);
 
 
 
-
-
-                                break;
+                        break;
 
 
 
