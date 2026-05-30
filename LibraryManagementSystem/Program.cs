@@ -162,52 +162,53 @@ namespace LibraryManagementSystem
 
             double discount = amount * 0.10;
 
-                    return discount;
+            return amount - discount;
 
         }
 
-        //public static double ApplyDiscount(double amount, string tier)
+        public static double ApplyDiscount(double amount, string tier)
 
-        //{
-        //    double discount = 0;
+        {
+            double discount = 0;
 
 
-        //    if (tier == "silver")
-        //    {
-        //        discount = 0.10;
-        //    }
+            if (tier == "silver")
+            {
+                discount = 0.10;
+            }
 
-        //     else  if (tier == "gold")
+            else if (tier == "gold")
 
-        //        {
-        //        discount = 0.20;
+            {
+                discount = 0.20;
+            }
 
-        //        {
-        //    else
+            else
+            {
 
-        //    discount = 0.5;
-        //        }
+                discount = 0.5;
+                }
 
-        //        return amount * discount;
-        //}
+                return amount * discount;
+            }
 
         //case3 // funaction to Borrow a Book 
 
-        //public static void BorrowBook (ref int NumAvailableCopies )
-        //{
+            //public static void BorrowBook (ref int NumAvailableCopies )
+            //{
 
-        //    if (NumAvailableCopies>0)
+            //    if (NumAvailableCopies>0)
 
-        //     {
-        //        NumAvailableCopies = NumAvailableCopies - 1;
+            //     {
+            //        NumAvailableCopies = NumAvailableCopies - 1;
 
-        //        Console.WriteLine(" );
-
-
-        //    }
+            //        Console.WriteLine(" );
 
 
-        //case 8 //Register Book
+            //    }
+
+
+            //case 8 //Register Book
 
         public static void libraryregister //funcation ADD BOOK 
 
@@ -349,15 +350,19 @@ namespace LibraryManagementSystem
 
                             case 6:
 
-                                //double Result = ApplyDiscount();
-                                //double Result1 = ApplyDiscount();
+                        Console.WriteLine(" enter amount:" );
+                        double amount=double.Parse(Console.ReadLine());
+                        Console.WriteLine(" enter tier:");
+                        string tier =Console.ReadLine();
+                        double Result = ApplyDiscount(amount);
+                        double Result1 = ApplyDiscount(amount,tier);
+                        Console.WriteLine(" normal discount" + Result);
+                        Console.WriteLine(" tier discount" + Result1);
 
 
 
 
-
-
-                                break;
+                        break;
 
                             case 7:
                                 break;
