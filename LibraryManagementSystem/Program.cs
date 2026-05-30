@@ -218,21 +218,6 @@ namespace LibraryManagementSystem
                 return amount * discount;
             }
 
-        //case3 // funaction to Borrow a Book 
-
-            //public static void BorrowBook (ref int NumAvailableCopies )
-            //{
-
-            //    if (NumAvailableCopies>0)
-
-            //     {
-            //        NumAvailableCopies = NumAvailableCopies - 1;
-
-            //        Console.WriteLine(" );
-
-
-            //    }
-
 
             //case 8 //Register Book
 
@@ -279,6 +264,31 @@ namespace LibraryManagementSystem
                 return false;
             }
 
+
+        }
+
+
+        //case 9
+
+        static string GenerateMemberID()
+
+
+
+        {
+
+
+
+            string memberName = "Ahmed";
+
+
+
+            string id = memberName.Substring(0, 3).ToUpper()
+
+
+
+                      + DateTime.Now.Second;
+
+            return id;
 
         }
 
@@ -441,14 +451,24 @@ namespace LibraryManagementSystem
                                 libraryregister(bookTitle, bookAuthor, NumAvailableCopies, bookGenre);
 
 
-
-
                                 break;
 
                             case 9:
+
+                        Console.WriteLine(GenerateMemberID());
+
+                           
+
                                 break;
 
                             case 10:
+
+
+
+
+
+
+
                                 break;
 
 
