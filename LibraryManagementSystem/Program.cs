@@ -23,7 +23,7 @@ namespace LibraryManagementSystem
 
         static bool   MemberIsregistered=false;
 
-        static string bookTitle = "";
+        static string bookTitle = "program";
 
         static string bookAuthor = "";
 
@@ -31,7 +31,7 @@ namespace LibraryManagementSystem
 
         static int  NumAvailableCopies = 0;
 
-        static bool   bookIsRegistered = false;
+        static bool   bookIsRegistered = true;
 
         static int totalBooksBorrowed = 0;
 
@@ -141,23 +141,18 @@ namespace LibraryManagementSystem
 
         // case 2:Search Book by Title
 
-        //public static bool searchofbook(string keyword)
-        //{
+        public static bool searchofbook(string keyword)
+        {
+            if(bookTitle.Contains(keyword) && bookIsRegistered==true)
 
-        //    if (bookIsRegistered == false)
-        //    {
-        //        Console.WriteLine("No book found");
+           {
+                return true;
 
-        //    return false;
-        //    }
+            }
 
-        //    else
+            return false;
 
-        //    {
-        //        return true;
-        //}
-
-        // }
+        }
 
 
         // case:6
@@ -171,30 +166,30 @@ namespace LibraryManagementSystem
 
         }
 
-        public static double ApplyDiscount(double amount, string tier)
+        //public static double ApplyDiscount(double amount, string tier)
 
-        {
-            double discount = 0;
+        //{
+        //    double discount = 0;
 
 
-            if (tier == "silver")
-            {
-                discount = 0.10;
-            }
+        //    if (tier == "silver")
+        //    {
+        //        discount = 0.10;
+        //    }
 
-             else  if (tier == "gold")
+        //     else  if (tier == "gold")
 
-                {
-                discount = 0.20;
+        //        {
+        //        discount = 0.20;
 
-                {
-            else
+        //        {
+        //    else
 
-            discount = 0.5;
-                }
+        //    discount = 0.5;
+        //        }
 
-                return amount * discount;
-        }
+        //        return amount * discount;
+        //}
 
         //case3 // funaction to Borrow a Book 
 
@@ -303,11 +298,21 @@ namespace LibraryManagementSystem
 
 
                     case 2:
+                        Console.WriteLine("enter keyword");
 
-                                                                                                                                                                            
+                           string keyword = Console.ReadLine();
+                        bool found = searchofbook(keyword);
 
+                        if (found==true)
+                        {
 
+                            Console.WriteLine("book  is found");
+                        }
 
+                        else 
+                        {
+                            Console.WriteLine("book  is not  found");
+                        }
 
                         break;
 
@@ -320,40 +325,40 @@ namespace LibraryManagementSystem
 
 
 
-                        break;
+                                break;
 
-                    case 4:
-                        break;
+                            case 4:
+                                break;
 
-                    case 5:
+                            case 5:
 
-                        //Console.WriteLine(" Enter overdue days");
-                        //int days =int.Parse(Console.ReadLine());
-                        // = CalculateLateFine( );
-
-
-
-
-
-                        break;
-
-
-
-
-                    case 6:
-
-                        double Result = ApplyDiscount();
-                        double Result1 = ApplyDiscount();
+                                //Console.WriteLine(" Enter overdue days");
+                                //int days =int.Parse(Console.ReadLine());
+                                // = CalculateLateFine( );
 
 
 
 
 
+                                break;
 
-                        break;
+
+
+
+                            case 6:
+
+                                //double Result = ApplyDiscount();
+                                //double Result1 = ApplyDiscount();
+
+
+
+
+
+
+                                break;
 
                             case 7:
-                        break;
+                                break;
 
 
 
@@ -361,56 +366,56 @@ namespace LibraryManagementSystem
 
 
                             case 8:
-                        Console.WriteLine(" enter book title");
-                        string bookTitle = Console.ReadLine();
-                        Console.WriteLine(" enter auther name");
-                        string bookAuthor = Console.ReadLine();
-                        Console.WriteLine(" enter number of copies");
-                        int NumAvailableCopies =int.Parse (Console.ReadLine());
-                        Console.WriteLine(" enter genre");
-                         string bookGenre = Console.ReadLine();
+                                Console.WriteLine(" enter book title");
+                                string bookTitle = Console.ReadLine();
+                                Console.WriteLine(" enter auther name");
+                                string bookAuthor = Console.ReadLine();
+                                Console.WriteLine(" enter number of copies");
+                                int NumAvailableCopies = int.Parse(Console.ReadLine());
+                                Console.WriteLine(" enter genre");
+                                string bookGenre = Console.ReadLine();
 
-                        libraryregister(bookTitle, bookAuthor, NumAvailableCopies, bookGenre);
-
-
+                                libraryregister(bookTitle, bookAuthor, NumAvailableCopies, bookGenre);
 
 
-                        break;
-
-                    case 9:
-                        break;
-
-                    case 10:
-                        break;
 
 
-                    case 11:
-                        break;
+                                break;
 
-                    case 12:
+                            case 9:
+                                break;
 
-                        break;
+                            case 10:
+                                break;
+
+
+                            case 11:
+                                break;
+
+                            case 12:
+
+                                break;
                             case 13:
-                        break;
+                                break;
 
-                    case 14:
-                        break;
+                            case 14:
+                                break;
 
-                    default:
-                        break;
-
-
-
-                } //end switch
-
-
-                Console.WriteLine("press any key ");
-                Console.ReadKey();
-                Console.Clear();
+                            default:
+                                break;
 
 
 
-            } //end while
+                            } //end switch
+
+
+                            Console.WriteLine("press any key ");
+                            Console.ReadKey();
+                            Console.Clear();
+
+
+
+                        } //end while
 
 
 
