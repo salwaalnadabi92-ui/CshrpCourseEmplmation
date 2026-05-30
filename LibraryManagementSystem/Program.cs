@@ -29,7 +29,7 @@ namespace LibraryManagementSystem
 
         static string bookGenre = "";
 
-        static int  NumAvailableCopies = 0;
+        static int  NumAvailableCopies = 6;
 
         static bool   bookIsRegistered = true;
 
@@ -153,6 +153,32 @@ namespace LibraryManagementSystem
             return false;
 
         }
+
+
+       //case 3 // borro book
+
+        public static void borrowBook(int copies)
+
+        {
+
+
+            copies--;
+
+        }
+
+        //case 4 return book
+
+        public static void returnBook(int copies)
+
+        {
+
+
+            copies++;
+
+        }
+
+
+
 
 
         // case:6
@@ -327,8 +353,9 @@ namespace LibraryManagementSystem
                         break;
 
                     case 3:
-
-
+                        int copies = 7;
+                        borrowBook(copies);
+                        Console.WriteLine(  "copies"  +copies);
 
 
 
@@ -338,7 +365,13 @@ namespace LibraryManagementSystem
                                 break;
 
                             case 4:
-                                break;
+
+                        returnBook(copies);
+                        Console.WriteLine("copies" + copies);
+
+
+
+                        break;
 
                             case 5:
 
