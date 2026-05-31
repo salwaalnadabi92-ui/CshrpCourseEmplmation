@@ -159,18 +159,18 @@ namespace LibraryManagementSystem
 
        //case 3 // borro book
 
-        public static void borrowBook(int copies)
+        public static void borrowBook( ref int copies)
 
         {
 
 
-            copies--;
+             copies--;
 
         }
 
         //case 4 return book
 
-        public static void returnBook(int copies)
+        public static void returnBook(ref int copies)
 
         {
 
@@ -418,17 +418,17 @@ namespace LibraryManagementSystem
 
                     case 3:
                         int copies1 = 7;
-                        borrowBook(copies1);
+                        borrowBook( ref copies1);
                         Console.WriteLine(  "copies"  +copies1);
-
+                        NumAvailableCopies = NumAvailableCopies - copies1;
                                 break;
 
 
                             case 4:
                         int copies = 7;
-                        returnBook(copies);
+                        returnBook( ref copies);
                         Console.WriteLine("copies" + copies);
-
+                        NumAvailableCopies = NumAvailableCopies + copies;
 
 
                         break;
@@ -491,13 +491,13 @@ namespace LibraryManagementSystem
 
                             case 8:
                                 Console.WriteLine(" enter book title");
-                                 bookTitle = Console.ReadLine();
+                                  bookTitle = Console.ReadLine();
                                 Console.WriteLine(" enter auther name");
-                                 bookAuthor = Console.ReadLine();
+                                  bookAuthor = Console.ReadLine();
                                 Console.WriteLine(" enter number of copies");
                                  NumAvailableCopies = int.Parse(Console.ReadLine());
                                 Console.WriteLine(" enter genre");
-                                 bookGenre = Console.ReadLine();
+                                bookGenre = Console.ReadLine();
 
                                 libraryregister(bookTitle, bookAuthor, NumAvailableCopies, bookGenre);
 
