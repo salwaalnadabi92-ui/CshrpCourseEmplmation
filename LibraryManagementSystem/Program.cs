@@ -293,6 +293,14 @@ namespace LibraryManagementSystem
         }
 
 
+        //case 10//display book detailes 
+
+        public static void BookDetailes(string auther, string title, int copy)
+        {
+            Console.WriteLine("auter  " + auther);
+            Console.WriteLine("title  " + title);
+            Console.WriteLine("copy " + copy);
+         }
 
 
         static void Main(string[] args)
@@ -440,13 +448,13 @@ namespace LibraryManagementSystem
 
                             case 8:
                                 Console.WriteLine(" enter book title");
-                                string bookTitle = Console.ReadLine();
+                                 bookTitle = Console.ReadLine();
                                 Console.WriteLine(" enter auther name");
-                                string bookAuthor = Console.ReadLine();
+                                 bookAuthor = Console.ReadLine();
                                 Console.WriteLine(" enter number of copies");
-                                int NumAvailableCopies = int.Parse(Console.ReadLine());
+                                 NumAvailableCopies = int.Parse(Console.ReadLine());
                                 Console.WriteLine(" enter genre");
-                                string bookGenre = Console.ReadLine();
+                                 bookGenre = Console.ReadLine();
 
                                 libraryregister(bookTitle, bookAuthor, NumAvailableCopies, bookGenre);
 
@@ -464,10 +472,9 @@ namespace LibraryManagementSystem
                             case 10:
 
 
-
-
-
-
+                        BookDetailes(bookTitle, bookAuthor, NumAvailableCopies);
+                           
+        
 
                                 break;
 
