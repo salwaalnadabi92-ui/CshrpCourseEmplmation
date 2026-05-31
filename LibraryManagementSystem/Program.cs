@@ -2,6 +2,7 @@
 using System.ComponentModel.Design;
 using System.Reflection.Metadata.Ecma335;
 using System.Timers;
+using System.Transactions;
 using static System.Collections.Specialized.BitVector32;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -303,6 +304,35 @@ namespace LibraryManagementSystem
          }
 
 
+
+
+        //case 11 // calculate renewal fee
+
+
+        public static double calculateRenewalFee(int renewalDay) 
+        
+        {
+            return renewalDay * 2; 
+
+        }
+
+        public static double calculateRenewalFee(int renewalDay, bool halvesFee )
+
+        {
+            double fee = renewalDay * 2;
+
+            if ( halvesFee ) 
+            {
+                fee = fee / 2;
+
+            }
+
+            return fee;
+        }
+
+
+
+
         static void Main(string[] args)
         {
                 bool exit = false;                                                                                                                                                                           
@@ -375,12 +405,8 @@ namespace LibraryManagementSystem
                         borrowBook(copies);
                         Console.WriteLine(  "copies"  +copies);
 
-
-
-
-
-
                                 break;
+
 
                             case 4:
 
@@ -480,9 +506,21 @@ namespace LibraryManagementSystem
 
 
                             case 11:
-                                break;
+
+                        Console.WriteLine("  enter renewal day");
+                        int renewalDay=int.Parse(Console.ReadLine());
+                        double fee1= calculateRenewalFee(renewalDay);
+
+                        double fee2 = calculateRenewalFee(renewalDay, true);
+
+
+                        break;
+
+
 
                             case 12:
+
+
 
                                 break;
                             case 13:
