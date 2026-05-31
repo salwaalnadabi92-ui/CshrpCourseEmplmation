@@ -274,19 +274,11 @@ namespace LibraryManagementSystem
 
         static string GenerateMemberID()
 
-
-
         {
-
-
 
             string memberName = "Ahmed";
 
-
-
             string id = memberName.Substring(0, 3).ToUpper()
-
-
 
                       + DateTime.Now.Second;
 
@@ -425,15 +417,15 @@ namespace LibraryManagementSystem
                         break;
 
                     case 3:
-                        int copies = 7;
-                        borrowBook(copies);
-                        Console.WriteLine(  "copies"  +copies);
+                        int copies1 = 7;
+                        borrowBook(copies1);
+                        Console.WriteLine(  "copies"  +copies1);
 
                                 break;
 
 
                             case 4:
-
+                        int copies = 7;
                         returnBook(copies);
                         Console.WriteLine("copies" + copies);
 
@@ -476,8 +468,9 @@ namespace LibraryManagementSystem
 
                             case 7:
                     
-                        DateTime Date = DateTime.Parse(Console.ReadLine());
-                        bool eligible = checkEligibility(Date);
+                        DateTime date = DateTime.Parse(Console.ReadLine());
+                        bool eligible = checkEligibility(membershipExpiryDate);
+
                               if (eligible)
                         {
                             Console.WriteLine(" member can borrow");
@@ -558,9 +551,11 @@ namespace LibraryManagementSystem
                                 break;
 
                             case 14:
-                                break;
+                        exit =true;
+                        break;
+                      
 
-                            default:
+                    default:
                                 break;
 
 
