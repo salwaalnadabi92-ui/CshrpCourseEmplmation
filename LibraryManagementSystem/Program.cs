@@ -349,9 +349,9 @@ namespace LibraryManagementSystem
 
         //case 13 // session summary 
 
-        public static void sessionSummary( string memberName,  int totalborrow, int totalFinePaid)
+        public static void sessionSummary()
         {
-            Console.WriteLine(" memberName " + memberName   );
+            Console.WriteLine(" memberName " + MemberName  );
             Console.WriteLine(" totalborrow " + totalBooksBorrowed  );
             Console.WriteLine(" totalFinePai " +   totalFinesPaid );
             Console.WriteLine(" date && time " + DateTime.Now);
@@ -544,6 +544,10 @@ namespace LibraryManagementSystem
 
                             case 12:
 
+                        Console.WriteLine("enter new email");
+                        string newemail = Console.ReadLine();
+                        string cleanEamil;
+                        bool update = updateMemberEmail(newemail, out cleanEamil);
 
                                 break;
 
