@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System.ComponentModel.Design;
+using System.Diagnostics.Metrics;
 using System.Reflection.Metadata.Ecma335;
 using System.Timers;
 using System.Transactions;
@@ -330,9 +331,32 @@ namespace LibraryManagementSystem
             return fee;
         }
 
+        //case 12  update member email
+
+        public static bool updateMemberEmail(string  newEmail, out string cleanEmail) 
+       
+        {
+            cleanEmail=newEmail.Trim();
+
+            //vaildated
+            if (cleanEmail.Contains("@") )
+                {
+                return true;
+            }
+            return false;
+        }
 
 
+        //case 13 // session summary 
 
+        public static void sessionSummary( string memberName,  int totalborrow, int totalFinePaid)
+        {
+            Console.WriteLine(" memberName " + memberName   );
+            Console.WriteLine(" totalborrow " + totalBooksBorrowed  );
+            Console.WriteLine(" totalFinePai " +   totalFinesPaid );
+            Console.WriteLine(" date && time " + DateTime.Now);
+
+        }
         static void Main(string[] args)
         {
                 bool exit = false;                                                                                                                                                                           
@@ -521,9 +545,12 @@ namespace LibraryManagementSystem
                             case 12:
 
 
-
                                 break;
+
                             case 13:
+                        sessionSummary();
+
+
                                 break;
 
                             case 14:
