@@ -14,7 +14,8 @@ namespace array
             for (int i = 0; i<temperatures.Length; i++)
             {
 
-                Console.WriteLine("day (i+1) " +temperatures[i]);
+                Console.WriteLine("The day"  + i +"is:");
+                Console.WriteLine(temperatures[i]);
 
 
 
