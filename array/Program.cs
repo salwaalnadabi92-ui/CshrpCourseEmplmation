@@ -14,14 +14,26 @@ namespace array
             for (int i = 0; i<temperatures.Length; i++)
             {
 
-                Console.WriteLine(temperatures[i]);
+                Console.WriteLine("day (i+1) " +temperatures[i]);
+
+
 
             }
         }
+        //proplem 2
+        //public static void StudentScore()
+        //{
+        //    int[] scores = new int[] { 70, 90, 60, 87, 56, 84 };
+
+        //    foreach (int number in scores)
+        //    {
+        //        Console.WriteLine(scores);
+        //    }
 
 
 
 
+        //}
 
 
         static void Main(string[] args)
@@ -59,6 +71,7 @@ namespace array
                     break;
 
                 case 2:
+                        //StudentScore();
 
                     break;
 
