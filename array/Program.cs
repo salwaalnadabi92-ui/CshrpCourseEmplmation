@@ -48,9 +48,37 @@ namespace array
 
 
         //proplem 3:Product Price Finder 
-        double[] prices=new double[] { }
+        public static void Price()
+        {
+
+            double[] prices = new double[] { 2.4, 3.8, 5.9, 6.8, 4.5 };
+
+         for (int i = 0; i<prices.Length; i++)
+            {
+                Console.WriteLine(  "The product" +( i+1)+":"+ prices[i]);
+
+            }
+
+            //double targetprice = 5.9;
+            // int index= Array.IndexOf(prices, targetprice);
+            int index = Array.IndexOf(prices,5.9);
+            if (index == -1)
+            {
+                Console.WriteLine(" price is not found");
+
+            }
+            else
+            {
+                Console.WriteLine(" price is found"+ index);
+
+            }
+
+        }
 
 
+        //problem 4 :Race Finish Times  
+
+        int[] finishTimes=new int 
 
 
 
@@ -94,6 +122,7 @@ namespace array
                         break;
 
                 case 3:
+                        Price();
 
                     break;
 
