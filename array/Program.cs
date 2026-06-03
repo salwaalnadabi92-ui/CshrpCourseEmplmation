@@ -14,27 +14,44 @@ namespace array
             for (int i = 0; i<temperatures.Length; i++)
             {
 
-                Console.WriteLine("The day"  + i +"is:");
-                Console.WriteLine(temperatures[i]);
+                Console.WriteLine("The day" + ( i+1)+":" + temperatures[i]+"c");
 
+            }
+
+            Console.WriteLine("The total reading" + temperatures.Length);
+
+        }
+
+        //proplem 2
+        public static void StudentScore()
+        {
+            int[] scores = new int[] { 70, 90, 60, 87, 56, 84 };
+
+            Console.WriteLine(" original order");
+            foreach (int number in scores)
+            {
+                Console.WriteLine(number);
+            }
+
+            Array.Reverse(scores);
+            Console.WriteLine(" Reverse Scores");
+
+            for (int i = 0; i < scores.Length; i++)
+            {
+                Console.WriteLine(scores[i]);
 
 
             }
+
         }
-        //proplem 2
-        //public static void StudentScore()
-        //{
-        //    int[] scores = new int[] { 70, 90, 60, 87, 56, 84 };
-
-        //    foreach (int number in scores)
-        //    {
-        //        Console.WriteLine(scores);
-        //    }
 
 
 
+        //proplem 3:Product Price Finder 
+        double[] prices=new double[] { }
 
-        //}
+
+
 
 
         static void Main(string[] args)
@@ -72,9 +89,9 @@ namespace array
                     break;
 
                 case 2:
-                        //StudentScore();
+                        StudentScore();
 
-                    break;
+                        break;
 
                 case 3:
 
