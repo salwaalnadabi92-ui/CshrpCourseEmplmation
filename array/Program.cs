@@ -77,9 +77,26 @@ namespace array
 
 
         //problem 4 :Race Finish Times  
+         public static void RaceFinishTimes()
+        {
+            int[] finishTimes = new int[] { 90, 87, 120, 78, 95, 110, 100, 105 };
+        Console.WriteLine(" original order");
+            foreach (int time in finishTimes)
+            {
+                Console.WriteLine(time);
+            }
 
-        int[] finishTimes=new int 
 
+            Array.Sort(finishTimes);
+            Console.WriteLine("DISPLAY SORT");
+            foreach (int time in finishTimes)
+            {
+                Console.WriteLine(time);
+            }
+
+
+            Console.WriteLine(" participants  " +finishTimes.Length);
+        }
 
 
         static void Main(string[] args)
@@ -127,6 +144,8 @@ namespace array
                     break;
 
                 case 4:
+
+                        RaceFinishTimes();
 
                     break;
 
