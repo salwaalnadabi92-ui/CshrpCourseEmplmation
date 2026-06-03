@@ -157,11 +157,29 @@ namespace array
 
         }
 
+       // Problem 7: Library Book Shelf Scanner
+
+        public static void LibraryBookShelfScanner()
+        {
+            int[] copies = new int[] { 7, 5, 4, 3, 2, 1, 5, 8, 4 };
+
+            Console.WriteLine("original order ");
+            foreach (int number in copies)
+            {
+                Console.WriteLine( number);
+            }
+
+            Array.Sort(copies);
+
+            foreach (int number in copies)
+            {
+                Console.WriteLine(number);
+            }
 
 
 
 
-
+        }
 
 
         static void Main(string[] args)
@@ -226,6 +244,9 @@ namespace array
                     break;
 
                 case 7:
+
+                       LibraryBookShelfScanner();
+
 
                     break;
                 case 8:
