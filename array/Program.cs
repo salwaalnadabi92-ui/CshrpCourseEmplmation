@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 using System.Timers;
 
 namespace array
@@ -121,6 +122,47 @@ namespace array
 
         }
 
+        //problem 6:  Warehouse Inventory Check  
+         public static void WarehouseInventoryCheck()
+        {
+
+            int[] quantities = new int[] { 70, 60, 56, 48, 55, 56, 76, 82 };
+
+                int total = 0;
+
+            for (int i = 0; i<quantities.Length; i++)
+            {
+                total += quantities[i];
+            }
+            Console.WriteLine(" toatl" + ":" + total);
+
+
+
+            double average = (double) total / quantities.Length;
+
+            Console.WriteLine(  " average "+  ":"  +average);
+
+            int index = Array.IndexOf(quantities,55 );
+            if (index == -1)
+            {
+                Console.WriteLine(" quantity is not found");
+
+            }
+            else
+            {
+                Console.WriteLine("quantity is found"+ ":" + index);
+
+            }
+
+
+        }
+
+
+
+
+
+
+
 
         static void Main(string[] args)
         {
@@ -178,6 +220,8 @@ namespace array
                     break;
 
                 case 6:
+
+                        WarehouseInventoryCheck();
 
                     break;
 
