@@ -1,5 +1,7 @@
 <Solution>
+  <Project Path="array/array.csproj" Id="426d777e-73ce-41cd-998f-9d85e466144d" />
   <Project Path="clinicSystem/clinicSystem.csproj" />
   <Project Path="HotelManagementSystem/HotelManagementSystem.csproj" Id="8edd1b0c-af2d-4df1-841f-dc68fa79ecad" />
   <Project Path="LibraryManagementSystem/LibraryManagementSystem.csproj" Id="5d722974-1767-474d-b648-ac409302188b" />
+  <Project Path="list/list.csproj" Id="c0d2abc3-e2bc-41d2-809d-495f5303a682" />
 </Solution>
