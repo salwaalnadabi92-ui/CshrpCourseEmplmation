@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography.X509Certificates;
+using System.Timers;
 
 namespace array
 {
@@ -99,6 +100,28 @@ namespace array
         }
 
 
+
+        //problem 5: Classroom Grade Report 
+        public static void ClassroomGradeReport()
+        {
+
+            int[] grades = new int[] { 99, 98, 100, 87, 80, 76, 95, 87, 70, 86 };
+
+            Array.Sort(grades);
+            Array.Reverse( grades);
+
+            Console.WriteLine(" rank label  ");
+
+            for (int i = 0; i < grades.Length; i++)
+            {
+
+                Console.WriteLine("Rank"+ (i+1 )+ ":" + grades[i] );
+            }
+            
+
+        }
+
+
         static void Main(string[] args)
         {
             bool exit = false;
@@ -150,6 +173,7 @@ namespace array
                     break;
 
                 case 5:
+                          ClassroomGradeReport();
 
                     break;
 
