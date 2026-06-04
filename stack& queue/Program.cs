@@ -1,4 +1,7 @@
-﻿using static System.Net.WebRequestMethods;
+﻿using System.Collections;
+using System.ComponentModel.Design;
+using System.Xml.Linq;
+using static System.Net.WebRequestMethods;
 
 namespace stack__queue
 {
@@ -55,10 +58,56 @@ namespace stack__queue
 
         }
 
+        // problem 2: Hotel Check-In Queue 
+         public static void HotelCheckInQueue()
+        {
+            Queue<string> checkInQueue=new Queue<string>();
+            Console.WriteLine(" ____________Display all waiting guests __________");
+            checkInQueue.Enqueue("salwa" );
+            checkInQueue.Enqueue(" Ali");
+            checkInQueue.Enqueue("khalfan");
+            checkInQueue.Enqueue("fatam");
+            checkInQueue.Enqueue("ahmed");
+              foreach(string item in checkInQueue) 
+            
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine(" display who is next ");
+            var next=checkInQueue.Dequeue();
+            Console.WriteLine(next);
+
+            Console.WriteLine(" ------------------------------ ");
+            var serve1 = checkInQueue.Dequeue();
+            Console.WriteLine(serve1);
+            var serve2 = checkInQueue.Dequeue();
+            Console.WriteLine(serve2);
+            Console.WriteLine("_______________________________");
+            Console.WriteLine("remaining queue after serving");
+            foreach (string item in checkInQueue)
+
+            {
+                Console.WriteLine(item);
+            }
+
+            string guestnName = "Ali ";
+
+            if (checkInQueue.Contains(guestnName)) 
+            {
+                Console.WriteLine(" guset wait");
+            }
+            else
+                {
+                    Console.WriteLine("no guest wait ");
+                }
 
 
+            Console.WriteLine(" the total number of guests   " + (checkInQueue.Count));
 
+            }
 
+        //p
 
 
 
@@ -101,7 +150,7 @@ namespace stack__queue
                         break;
 
                     case 2:
-                       
+                        HotelCheckInQueue();
 
                         break;
 
