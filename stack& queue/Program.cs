@@ -165,7 +165,7 @@ namespace stack__queue
 
 
 
-            Console.WriteLine(" SHOW REMIAN VLUES TO UNDOSTACK");
+            Console.WriteLine(" SHOW REMIAN VLUES in UNDOSTACK");
             undoStack.Push(tempStack.Pop());
             undoStack.Push(tempStack.Pop());
 
@@ -173,8 +173,6 @@ namespace stack__queue
             {
                 Console.WriteLine(item);
             }
-
-
 
 
             Console.WriteLine("Display the final Count"+ undoStack.Count );
@@ -196,10 +194,15 @@ namespace stack__queue
             triageQueue.Enqueue("patient8");
             Console.WriteLine(" display all ");
             Console.WriteLine("_______________________________");
+
+            int POSTION = 1;
             foreach (var item in triageQueue)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(POSTION + ":" + item);
+
+          POSTION++;
             }
+          
 
             Console.WriteLine("who will be seen next");
              var next= triageQueue.Peek();
@@ -223,13 +226,35 @@ namespace stack__queue
 
 
 
-
-
             Queue<string> tempQueue= new Queue<string>();//TEMP 
 
-                
+            Console.WriteLine("Remove them from the queue  to temp");
+            triageQueue.Enqueue(tempQueue.Dequeue());
+            triageQueue.Enqueue(tempQueue.Dequeue());
+            triageQueue.Dequeue();
 
+            foreach (string item in triageQueue)
+            {
+                Console.WriteLine(item);
             }
+
+
+            Console.WriteLine(" SHOW REMIAN VLUES in queue");
+            triageQueue.Enqueue(tempQueue.Dequeue());
+            triageQueue.Enqueue(tempQueue.Dequeue());
+
+            foreach (string item in triageQueue)
+            {
+                Console.WriteLine(item);
+            }
+
+
+
+
+
+
+
+        }
 
 
 
@@ -282,7 +307,8 @@ namespace stack__queue
 
                     case 4:
 
-                      
+                        HospitalEmergencyRoomTriage();
+
                         break;
 
                     case 5:
