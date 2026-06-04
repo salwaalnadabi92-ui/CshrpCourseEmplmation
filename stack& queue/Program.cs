@@ -76,7 +76,7 @@ namespace stack__queue
             }
 
             Console.WriteLine(" display who is next ");
-            var next=checkInQueue.Dequeue();
+            var next=checkInQueue.Peek();
             Console.WriteLine(next);
 
             Console.WriteLine(" ------------------------------ ");
@@ -141,7 +141,7 @@ namespace stack__queue
             Console.WriteLine("remove first action " + firstAction);
 
             var secondAction = undoStack.Pop();
-            Console.WriteLine("remove first action " + secondAction);
+            Console.WriteLine("remove second action " + secondAction);
             Console.WriteLine("_______________________________");
             Console.WriteLine(" display the remaining undo history ");
             foreach (string item in undoStack)
@@ -151,6 +151,30 @@ namespace stack__queue
             }
 
                Stack<string> tempStack= new Stack<string>();//Temporary stack
+
+            Console.WriteLine("move to tempstack from undostack  ");
+
+            tempStack.Push(undoStack.Pop());
+            tempStack.Push(undoStack.Pop());
+            undoStack.Pop();
+
+            foreach (string item in undoStack)
+            {
+                Console.WriteLine(item);
+            }
+
+
+
+            Console.WriteLine(" SHOW REMIAN VLUES TO UNDOSTACK");
+            undoStack.Push(tempStack.Pop());
+            undoStack.Push(tempStack.Pop());
+
+            foreach (string item in undoStack)
+            {
+                Console.WriteLine(item);
+            }
+
+
 
 
             Console.WriteLine("Display the final Count"+ undoStack.Count );
@@ -203,7 +227,7 @@ namespace stack__queue
 
             Queue<string> tempQueue= new Queue<string>();//TEMP 
 
-
+                
 
             }
 
