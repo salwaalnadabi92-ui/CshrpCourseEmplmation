@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.ComponentModel.Design;
+using System.Threading.Channels;
 using System.Xml.Linq;
 using static System.Net.WebRequestMethods;
 
@@ -79,10 +80,12 @@ namespace stack__queue
             Console.WriteLine(next);
 
             Console.WriteLine(" ------------------------------ ");
+
             var serve1 = checkInQueue.Dequeue();
             Console.WriteLine(serve1);
             var serve2 = checkInQueue.Dequeue();
             Console.WriteLine(serve2);
+
             Console.WriteLine("_______________________________");
             Console.WriteLine("remaining queue after serving");
             foreach (string item in checkInQueue)
@@ -107,8 +110,102 @@ namespace stack__queue
 
             }
 
-        //p
+       // problem 3:  Text Editor Undo System
 
+        public static void TextEditorUndoSystem()
+        {
+
+            Stack<string> undoStack = new Stack<string>();
+
+            undoStack.Push("Created page");
+            undoStack.Push("Deleted page");
+            undoStack.Push("Renamed page");
+            undoStack.Push("Duplicated page");
+            undoStack.Push("Moved page");
+            undoStack.Push("Changed page URL");
+            undoStack.Push("Updated page content");
+            Console.WriteLine(" display all description ");
+            Console.WriteLine("_______________________________");
+            foreach (string item in undoStack)
+
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("_______________________________");
+            Console.WriteLine("  undone next ");
+            var undo = undoStack.Peek();
+            Console.WriteLine(undo);
+            Console.WriteLine("_______________________________");
+            Console.WriteLine(" Undo the last 2 actions   ");
+            var firstAction= undoStack.Pop();
+            Console.WriteLine("remove first action " + firstAction);
+
+            var secondAction = undoStack.Pop();
+            Console.WriteLine("remove first action " + secondAction);
+            Console.WriteLine("_______________________________");
+            Console.WriteLine(" display the remaining undo history ");
+            foreach (string item in undoStack)
+
+            {
+                Console.WriteLine(item);
+            }
+
+               Stack<string> tempStack= new Stack<string>();//Temporary stack
+
+
+            Console.WriteLine("Display the final Count"+ undoStack.Count );
+        }
+
+        //PROBLEM 4: Hospital Emergency Room Triage
+
+        public static void HospitalEmergencyRoomTriage()
+        {
+         Queue<string> triageQueue = new Queue<string>();
+
+            triageQueue.Enqueue("patient1");
+            triageQueue.Enqueue("patient2");
+            triageQueue.Enqueue("patient3");
+            triageQueue.Enqueue("patient4");
+            triageQueue.Enqueue("patient5");
+            triageQueue.Enqueue("patient6");
+            triageQueue.Enqueue("patient7");
+            triageQueue.Enqueue("patient8");
+            Console.WriteLine(" display all ");
+            Console.WriteLine("_______________________________");
+            foreach (var item in triageQueue)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("who will be seen next");
+             var next= triageQueue.Peek();
+            Console.WriteLine(next);
+
+            Console.WriteLine("  result  the first 3 patients remove    ");
+            var Name1 = triageQueue.Dequeue();
+            Console.WriteLine(Name1);
+
+            var Name2 = triageQueue.Dequeue();
+            Console.WriteLine(Name2);
+
+            var Name3 = triageQueue.Dequeue();
+            Console.WriteLine(Name3);
+            Console.WriteLine(" Display the remaining queue  ");
+
+            foreach (var item in triageQueue)
+            {
+                Console.WriteLine(item);
+            }
+
+
+
+
+
+            Queue<string> tempQueue= new Queue<string>();//TEMP 
+
+
+
+            }
 
 
 
@@ -155,9 +252,9 @@ namespace stack__queue
                         break;
 
                     case 3:
-                     
+                            TextEditorUndoSystem();
 
-                        break;
+                            break;
 
                     case 4:
 
