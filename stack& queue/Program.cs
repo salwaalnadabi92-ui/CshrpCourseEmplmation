@@ -228,30 +228,36 @@ namespace stack__queue
 
             Queue<string> tempQueue= new Queue<string>();//TEMP 
 
+           int  postion1 = 0;
+
             Console.WriteLine("Remove them from the queue  to temp");
-            triageQueue.Enqueue(tempQueue.Dequeue());
-            triageQueue.Enqueue(tempQueue.Dequeue());
+
+            tempQueue.Enqueue(triageQueue.Dequeue());
+            tempQueue.Enqueue(triageQueue.Dequeue());
             triageQueue.Dequeue();
 
             foreach (string item in triageQueue)
             {
-                Console.WriteLine(item);
+                Console.WriteLine("postion "+ " :" +item);
             }
 
+            postion1++;
 
+            
+            int postion2 = 0;
             Console.WriteLine(" SHOW REMIAN VLUES in queue");
             triageQueue.Enqueue(tempQueue.Dequeue());
             triageQueue.Enqueue(tempQueue.Dequeue());
 
             foreach (string item in triageQueue)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(" postion " + ":" + item);
             }
 
+            postion2++;
 
 
-
-
+            Console.WriteLine("Display the final Count" + triageQueue.Count);
 
 
         }
